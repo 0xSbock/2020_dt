@@ -1,0 +1,60 @@
+{% macro card(page) %}
+<div class="card">
+  <div class="preview-img">
+    <a href="{{ page.path | safe }}">
+      {% set rel_path = page.relative_path | replace(from="index.md", to="") %}
+      {% set img_path = rel_path ~ page.extra.cover %}
+      <img src="{{ resize_image(path=img_path, width=1280, height=800, op="fill")  }}" alt="{{ page.extra.coverAlt }}">
+    </a>
+  </div>
+  <div class="card-description">
+    <h2 class="card-heading"></h2>
+    {% if page.description %}
+    <p class="card-summary">
+      {{ page.description }}
+    </p>
+    {% endif %}
+    {% if page.taxonomies.tags %}
+    <ul class="tag-list">
+      {% for tag in page.taxonomies.tags %}
+      <li><a class="tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if page.date %}
+    <span class="date">
+      {{ page.date | date(format="%Y-%m-%d") }}
+    </span>
+    {% endif %}
+  </div>
+</div>
+{% endmacro card %}
+
+
+{% macro responsive_image(page, path, alt) %}
+{% set rel_path = page.relative_path | replace(from="index.md", to="") %}
+{% set img_path = rel_path ~ path %}
+{% set meta = get_image_metadata(path=img_path) %}
+
+{% set tiny = tiny | default (value=20) %}
+{% set small = small | default (value=500) %}
+{% set medium = medium | default (value=1200) %}
+{% set large = large | default (value=1500) %}
+
+{% set tiny_img = resize_image(path=img_path, width=tiny, op="fit_width") %}
+{% set small_img = resize_image(path=img_path, width=small, op="fit_width") %}
+{% set medium_img = resize_image(path=img_path, width=medium, op="fit_width") %}
+{% set large_img = resize_image(path=img_path, width=large, op="fit_width") %}
+
+<img class="article-img" src="{{ img_path }}" srcset="
+              {{ small_img }} {{ small }}w,
+              {{ medium_img }} {{ medium }}w, {{ large_img }} {{ large }}w" alt="{{ alt | safe }}">
+{% endmacro %}
+
+
+{% macro svg_icon(page, path) %}
+{% set rel_path = page.relative_path | replace(from="index.md", to="") %}
+{% set svg_path = "content/" ~ rel_path ~ path %}
+{{ load_data(path=svg_path) | replace(from="<svg", to="<svg class='svg-icon'")| safe }}
+
+{% endmacro %}

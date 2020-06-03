@@ -1,0 +1,27 @@
+{% import "blog_macros.html" as macros %}
+
+{% extends "base.html" %}
+{% block content %}
+{#
+<div id="overview">
+
+  {% for term in terms %}
+  {{ macros::card(page=page) }}
+  {{ macros::card(page=page) }}
+  {{ macros::card(page=page) }}
+  {{ macros::card(page=page) }}
+  {{ macros::card(page=page) }}
+  {{ macros::card(page=page) }}
+  {% endfor %}
+</div>
+##}
+<h1>Tags</h1>
+
+{% if terms %}
+<ul>
+  {% for term in terms %}
+  <li><a href="{{ term.permalink | safe }}">{{ term.name }}</a> ({{ term.pages | length }})</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+name = "sbock_dark_2020"
+description = "My simple dark theme"
+license = "TODO"
+homepage = "https://github.com/0xSbock/sbock_dark_2020"
+min_version = "0.11.0"
+
+[extra]
+
+
+[author]
+name = "Sebastian Bockholt"
+homepage = "https://sbock.dev/"
+
+#[original]
+# this is not a port of an existing theme...

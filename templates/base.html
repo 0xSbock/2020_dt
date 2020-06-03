@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "head.html" %}
+</head>
+
+<body>
+  <header>
+    {% block header %}
+    {% endblock header %}
+    {% include "nav.html" %}
+  </header>
+  <section class="centering">
+    <div id="overview">
+      {% block heading %}
+      {% endblock heading %}
+      {% block content %}{% endblock content %}
+    </div>
+  </section>
+
+</body>
+
+</html>

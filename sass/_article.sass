@@ -1,0 +1,48 @@
+.single-article
+  margin-top: 4rem
+  width: 700px
+
+.single-tag-list
+  padding-inline-start: 0
+  margin-inline-start: 0
+  margin-block-start: 0
+  width: 100%
+  display: flex
+  justify-content: flex-start
+
+
+.article-date
+  font-family: 'Source Code Pro', monospace
+  font-size: 18pt
+
+
+.single-header > h1
+  color: $orange
+  font-size: 48pt
+  font-family: 'Roboto', sans-serif
+  font-weight: normal
+
+
+.single-content
+  font-family: 'Roboto', sans-serif
+  font-size: 18pt
+  font-weight: normal
+  line-height: 28pt
+  color: $fg
+  margin-top: 4rem
+
+
+@media(max-width: 780px)
+  .single-header > h1
+    font-size: 38pt
+
+  .single-header > article-date
+    font-size: 15pt
+
+  .single-header > single-tag-list
+    font-size: 15pt
+
+  .single-article
+    width: 95vw
+
+

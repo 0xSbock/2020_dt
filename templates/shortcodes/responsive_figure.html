@@ -1,0 +1,8 @@
+{% import "blog_macros.html" as macros %}
+
+<figure class="article-figure">
+  {{ macros::responsive_image(page=page, path=path, alt=alt) }}
+  {% if body %}
+  <figcaption class="article-figcaption">{{ body | safe }}</figcaption>
+  {% endif %}
+</figure>

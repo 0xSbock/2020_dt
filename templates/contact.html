@@ -1,0 +1,54 @@
+{% import "blog_macros.html" as macros %}
+
+{% extends "base.html" %}
+
+{% block content %}
+<article class="contact-content">
+  <header class="single-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+  <section>
+    <div class="contact-box">
+      <div class="contact-portrait">
+      {{ macros::responsive_image(page=page, path=page.extra.portrait, alt="portrait of myself") }}
+      </div>
+      <div class="contact-list">
+        {% if page.extra.mail %}
+        {% if page.extra.icons %} 
+        {{ macros::svg_icon(page=page, path="icons/envelope.svg")}}
+        {% endif %}
+        <a class="contact-link" href="{{page.extra.mail}}">Mail</a>
+        {% endif %}
+        {% if page.extra.github %}
+        {% if page.extra.icons %} 
+        {{ macros::svg_icon(page=page, path="icons/github.svg")}}
+        {% endif %}
+        <a class="contact-link" href="{{page.extra.github}}">Github</a>
+        {% endif %}
+        {% if page.extra.twitter %}
+        {% if page.extra.icons %} 
+        {{ macros::svg_icon(page=page, path="icons/twitter.svg")}}
+        {% endif %}
+        <a class="contact-link" href="{{page.extra.twitter}}">Twitter</a>
+        {% endif %}
+        {% if page.extra.mastodon %}
+        {% if page.extra.icons %} 
+        {{ macros::svg_icon(page=page, path="icons/mastodon.svg")}}
+        {% endif %}vorite programming languages are:
+
+Rust
+Elixir
+Python
+GolfScript
+        <a class="contact-link" href="{{page.extra.mastodon}}">Mastodon</a>
+        {% endif %}
+        </ul>
+    </div>
+  </section>
+</article>
+<article class="single-article">
+  <section class="single-content">
+    {{ page.content | safe }}
+  </section>
+</article>
+{% endblock content %}

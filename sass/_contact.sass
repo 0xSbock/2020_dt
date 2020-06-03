@@ -1,0 +1,59 @@
+.contact-content
+  width: 80vw
+
+  @media(max-width: 900px)
+    width: 95vw
+
+.contact-box
+  display: flex
+  flex-direction: row
+  justify-content: start
+  align-items: auto
+  align-content: start
+  margin-top: 2rem
+
+
+  @media(max-width: 900px)
+    display: flex
+    flex-direction: column
+    justify-content: start
+    align-items: auto
+    align-content: start
+
+    .contact-portrait
+      width: 100%
+
+    .contact-list
+      width: 100%
+      margin-left: 0
+      margin-top: 2rem
+
+
+
+.contact-portrait
+  width: 70%;
+
+.contact-list
+  width: 30%
+  color: $dark-blue
+  margin-left: 2rem
+
+.contact-list
+  display: block
+  flex-direction: column
+  justify-content: start
+
+.contact-link
+  float: left
+  display: inline-block
+  width: 50%
+  margin-left: 1rem
+  font-size: 19pt
+  font-family: 'Source Code Pro', monospace
+
+.svg-icon
+  fill: $fg
+  display: inline-block
+  max-width: 1.5rem
+  float: left
+  clear: both
