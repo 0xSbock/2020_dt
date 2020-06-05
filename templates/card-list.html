@@ -1,18 +1,16 @@
 {% import "blog_macros.html" as macros %}
 
 {% extends "base.html" %}
-{% block heading %}
-<h1 class="taxonomy-heading">{% block tax_term %} {% endblock %}: <span class="taxonomy-tag">#{{ term.name }}</span>
-</h1>
-{% endblock %}
+{% block header %}
+<div class="taxonomy-wrapper">
+  <h1 class="taxonomy-heading">
+    {% block tax_term %} {% endblock tax_term %}: <span class="taxonomy-tag">#{{ term.name }}</span>
+  </h1>
+</div>
+{% endblock header %}
 {% block content %}
 
 {% for page in term.pages %}
-{{ macros::card(page=page) }}
-{{ macros::card(page=page) }}
-{{ macros::card(page=page) }}
-{{ macros::card(page=page) }}
-{{ macros::card(page=page) }}
 {{ macros::card(page=page) }}
 {% endfor %}
 {% endblock content %}
