@@ -6,15 +6,13 @@
 </head>
 
 <body>
-  <header>
-    {% block header %}
-    {% endblock header %}
-    {% include "nav.html" %}
-  </header>
+  {% block nav %}
+  {% endblock nav %}
+  {% include "nav.html" %}
+  {% block header %}
+  {% endblock header %}
   <section class="centering">
     <div id="overview">
-      {% block heading %}
-      {% endblock heading %}
       {% block content %}{% endblock content %}
     </div>
   </section>
