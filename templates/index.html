@@ -2,9 +2,11 @@
 
 {% extends "base.html" %}
 {% block content %}
-{% set section = get_section(path="blog/_index.md") %}
+<div id="overview">
+  {% set section = get_section(path="blog/_index.md") %}
 
-{% for page in section.pages %}
-{{ macros::card(page=page) }}
-{% endfor %}
+  {% for page in section.pages %}
+  {{ macros::card(page=page) }}
+  {% endfor %}
+</div>
 {% endblock content %}

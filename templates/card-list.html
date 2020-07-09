@@ -10,7 +10,9 @@
 {% endblock header %}
 {% block content %}
 
-{% for page in term.pages %}
-{{ macros::card(page=page) }}
-{% endfor %}
+<div id="overview">
+  {% for page in term.pages %}
+  {{ macros::card(page=page) }}
+  {% endfor %}
+</div>
 {% endblock content %}
