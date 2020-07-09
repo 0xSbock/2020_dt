@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://github.com/sbock/sbock_dark_2020"
+base_url = "http://0xsbock.github.io/2020_dark_templar/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
