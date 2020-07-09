@@ -1,11 +1,11 @@
 +++
-title = "Learning an Audio Filter"
+title = "First Post"
 date = 2020-05-02T17:32:55+02:00
-description = "Trying to learn an guitar amp simulation with a small as possible neural network."
+description = "This is the first short post. Test!"
 draft = false
 
 [taxonomies]
-tags = ["ml", "LSTM", "audio"]
+tags = ["first", "post", "test"]
 
 [extra]
 cover = "images/cover.jpg"
