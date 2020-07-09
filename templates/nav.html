@@ -1,6 +1,10 @@
 <nav class="main-nav">
   <h1 class="home">
-    <a href="{{ get_url(path="/") }}">/home/sbock/</a>
+    {%if config.extra.blog_name %}
+    <a href="{{ get_url(path="/") }}">/home/{{ config.extra.blog_name }}</a>
+    {% else %}
+    <a href="{{ get_url(path="/") }}">/home/</a>
+    {% endif %}
   </h1>
   <h1 class="contact">
     <a href="{{ get_url(path="/contact/") }}">contact</a>

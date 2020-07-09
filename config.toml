@@ -18,3 +18,4 @@ taxonomies = [
 [extra]
 # Put all your custom variables here
 reading_time = true
+blog_name = "2020_dark_templar"
