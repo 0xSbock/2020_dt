@@ -1,4 +1,4 @@
-# 2020 Dark Templar Theme for [Zola](https://www.getzola.org/)
+# 2020 DT Theme for [Zola](https://www.getzola.org/)
 A dark theme for personal blogging with a visual preview for each article.
 
 __CURRENTLY UNDER WORK!__

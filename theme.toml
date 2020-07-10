@@ -1,7 +1,7 @@
-name = "2020_dark_templar"
+name = "2020_ddt"
 description = "My simple dark theme"
 license = "TODO"
-homepage = "https://github.com/0xSbock/2020_dark_templar"
+homepage = "https://github.com/0xSbock/2020_dt"
 min_version = "0.11.0"
 
 [extra]
