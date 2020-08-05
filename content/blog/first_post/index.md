@@ -10,6 +10,7 @@ tags = ["first", "post", "test"]
 [extra]
 cover = "images/cover.jpg"
 coverAlt = "A robot playing piano"
+toc = true
 +++
 
 Curabitur pretium tincidunt lacus.

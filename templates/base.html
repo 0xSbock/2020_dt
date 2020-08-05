@@ -11,10 +11,15 @@
   {% include "nav.html" %}
   {% block header %}
   {% endblock header %}
+  
+  {% block pre_content %}
+  {% endblock pre_content %}
+
   <section class="centering">
     {% block content %}{% endblock content %}
   </section>
 
+{% block bottom_scripts %}{% endblock bottom_scripts %}
 </body>
 
 </html>

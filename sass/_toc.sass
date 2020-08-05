@@ -1,0 +1,23 @@
+#toc
+  position: fixed
+  align-self: flex-end
+  top: 25%
+  margin-right: 5rem
+  font-family: mono
+
+#toc li
+  list-style: none
+
+#toc ul > li
+  margin-left: 1em;
+
+.toc-link
+  color: darken($fg, 20%)
+  &:hover
+    color: $fg
+
+#toc li.active > a
+  color: $orange
+  &:hover
+    color: $yellow
+

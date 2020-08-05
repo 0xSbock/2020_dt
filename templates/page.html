@@ -23,10 +23,44 @@
 </header>
 {% endblock header %}
 
+
+
+{% block pre_content %}
+{% if page.extra.toc %}
+<nav id="toc">
+  <ul class="toc-level-one">
+    {% for h1 in page.toc %}
+    <li class="toc-entry">
+      <a class="toc-link" href="#{{h1.id | safe}}">{{ h1.title }}</a>
+      {% if h1.children %}
+      <ul class="toc-level-two">
+        {% for h2 in h1.children %}
+        <li class="toc-entry">
+          <a class="toc-link" href="#{{h2.id | safe}}">{{ h2.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock pre_content %}
+
+
 {% block content %}
 <article class="single-article">
+
+
   <section class="single-content">
     {{ page.content | safe }}
   </section>
 </article>
 {% endblock content %}
+
+{% block bottom_scripts %}
+{% if page.extra.toc %}
+<script src="{{ get_url(path="toc.js", trailing_slash=false) | safe }}"><script>
+{% endif %}
+{% endblock bottom_scripts %}
