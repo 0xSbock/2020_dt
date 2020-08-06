@@ -61,6 +61,6 @@
 
 {% block bottom_scripts %}
 {% if page.extra.toc %}
-<script src="{{ get_url(path="toc.js", trailing_slash=false) | safe }}"><script>
+<script src="{{ get_url(path="toc.js", trailing_slash=false) }}"></script>
 {% endif %}
 {% endblock bottom_scripts %}
