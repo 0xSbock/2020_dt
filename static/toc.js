@@ -16,6 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('h1[id], h2[id]').forEach((heading) => {
     scrollObserver.observe(heading);
-    console.log(heading);
   });
 });
