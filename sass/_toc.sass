@@ -11,6 +11,10 @@
 #toc ul > li
   margin-left: 1em;
 
+@media(max-width: $disable-toc)
+  #toc
+    display: none
+
 .toc-link
   color: darken($fg, 20%)
   &:hover
