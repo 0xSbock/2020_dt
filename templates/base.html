@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-<head>
-  {% include "head.html" %}
-</head>
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="Description" content="{% block description %}{% endblock description %}">
+    <title>{% block title %}{% endblock title %}</title>
 
-<body>
-  {% block nav %}
-  {% endblock nav %}
-  {% include "nav.html" %}
-  {% block header %}
-  {% endblock header %}
-  
-  {% block pre_content %}
-  {% endblock pre_content %}
+    {% if config.generate_feed %}
+    <link rel="alternate"
+          type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %}
+          title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+    {% endif %}
 
-  <section class="centering">
-    {% block content %}{% endblock content %}
-  </section>
+    {% block css %}
+      <link rel="stylesheet" href="{{ get_url(path="main.css", trailing_slash=false) | safe }}">
+    {% endblock css %}
 
-{% block bottom_scripts %}{% endblock bottom_scripts %}
-</body>
+    {% block extra_head %}
+    {% endblock extra_head %}
+  </head>
+
+  <body>
+    {% block nav %}
+    {% endblock nav %}
+    {% include "nav.html" %}
+    {% block header %}
+    {% endblock header %}
+
+    {% block pre_content %}
+    {% endblock pre_content %}
+
+    <section class="centering">
+      {% block content %}{% endblock content %}
+    </section>
+
+    {% block bottom_scripts %}{% endblock bottom_scripts %}
+  </body>
 
 </html>
