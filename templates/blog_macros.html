@@ -4,7 +4,7 @@
     <a href="{{ page.path | safe }}">
       {% set rel_path = page.relative_path | replace(from="index.md", to="") %}
       {% set img_path = rel_path ~ page.extra.cover %}
-      <img src="{{ resize_image(path=img_path, width=1280, height=800, op="fill")  }}" alt="{{ page.extra.coverAlt }}">
+      <img src="{{ resize_image(path=img_path, width=600, height=375, op="fill")  }}" alt="{{ page.extra.coverAlt }}">
     </a>
   </div>
   <div class="card-description">
