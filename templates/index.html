@@ -1,10 +1,13 @@
 {% import "blog_macros.html" as macros %}
 
 {% extends "base.html" %}
+{% block title %}{% set section = get_section(path="blog/_index.md") %}{{ section.title }}{% endblock title %}
+
+{% block description %}{% set section = get_section(path="blog/_index.md") %}{{ section.description }} {% endblock description %}
+
 {% block content %}
 <div id="overview">
   {% set section = get_section(path="blog/_index.md") %}
-
   {% for page in section.pages %}
   {{ macros::card(page=page) }}
   {% endfor %}

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}{{ page.title }}{% endblock title %}
+
+{% block description %}{{ page.description }}{% endblock description %}
+
 {% block header %}
 <header class="single-header top-spacing">
   {% if page.date %}
@@ -51,8 +55,6 @@
 
 {% block content %}
 <article class="single-article">
-
-
   <section class="single-content">
     {{ page.content | safe }}
   </section>
