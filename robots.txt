@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://0xSbock.github.io/2020_dt/sitemap.xml
