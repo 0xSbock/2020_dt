@@ -4,7 +4,8 @@
     <a href="{{ page.path | safe }}">
       {% set rel_path = page.relative_path | replace(from="index.md", to="") %}
       {% set img_path = rel_path ~ page.extra.cover %}
-      <img src="{{ resize_image(path=img_path, width=600, height=375, op="fill")  }}" alt="{{ page.extra.coverAlt }}">
+      {% set card_img = resize_image(path=img_path, width=600, height=375, op="fill", format="webp") %}
+      <img src="{{ card_img.url }}" alt="{{ page.extra.coverAlt }}">
     </a>
   </div>
   <div class="card-description">
@@ -41,14 +42,16 @@
 {% set medium = medium | default (value=1200) %}
 {% set large = large | default (value=1500) %}
 
-{% set tiny_img = resize_image(path=img_path, width=tiny, op="fit_width") %}
-{% set small_img = resize_image(path=img_path, width=small, op="fit_width") %}
-{% set medium_img = resize_image(path=img_path, width=medium, op="fit_width") %}
-{% set large_img = resize_image(path=img_path, width=large, op="fit_width") %}
+{% set tiny_img = resize_image(path=img_path, width=tiny, op="fit_width", format="webp", quality=70) %}
+{% set small_img = resize_image(path=img_path, width=small, op="fit_width", format="webp", quality=70) %}
+{% set medium_img = resize_image(path=img_path, width=medium, op="fit_width", format="webp", quality=70) %}
+{% set large_img = resize_image(path=img_path, width=large, op="fit_width", format="webp", quality=70) %}
 
-<img class="article-img" src="{{ img_path }}" srcset="
-              {{ small_img }} {{ small }}w,
-              {{ medium_img }} {{ medium }}w, {{ large_img }} {{ large }}w" alt="{{ alt | safe }}">
+<img class="article-img" src="{{ "/" ~ img_path }}" srcset="
+              {{ small_img.url }} {{ small_img.width }}w,
+              {{ medium_img.url }} {{ medium_img.width }}w,
+              {{ large_img.url }} {{ large_img.width }}w"
+      alt="{{ alt | safe }}">
 {% endmacro %}
 
 
