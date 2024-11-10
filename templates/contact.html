@@ -15,33 +15,6 @@
       <div class="contact-portrait">
       {{ macros::responsive_image(page=page, path=page.extra.portrait, alt="portrait of myself") }}
       </div>
-      <div class="contact-list">
-        {% if page.extra.mail %}
-        {% if page.extra.icons %} 
-        {{ macros::svg_icon(page=page, path="icons/envelope.svg")}}
-        {% endif %}
-        <a class="contact-link" href="{{page.extra.mail}}">Mail</a>
-        {% endif %}
-        {% if page.extra.github %}
-        {% if page.extra.icons %} 
-        {{ macros::svg_icon(page=page, path="icons/github.svg")}}
-        {% endif %}
-        <a class="contact-link" href="{{page.extra.github}}">Github</a>
-        {% endif %}
-        {% if page.extra.twitter %}
-        {% if page.extra.icons %} 
-        {{ macros::svg_icon(page=page, path="icons/twitter.svg")}}
-        {% endif %}
-        <a class="contact-link" href="{{page.extra.twitter}}">Twitter</a>
-        {% endif %}
-        {% if page.extra.mastodon %}
-        {% if page.extra.icons %} 
-        {{ macros::svg_icon(page=page, path="icons/mastodon.svg")}}
-        {% endif %}
-        <a class="contact-link" href="{{page.extra.mastodon}}">Mastodon</a>
-        {% endif %}
-        </ul>
-    </div>
   </section>
 </article>
 <article class="single-article">
@@ -50,3 +23,34 @@
   </section>
 </article>
 {% endblock content %}
+
+{% block bottom_scripts %}
+<section class="contact-content contact-footer">
+  <ul class="contact-list">
+    {% if page.extra.mail %}
+    {% if page.extra.icons %} 
+    {{ macros::svg_icon(page=page, path="icons/envelope.svg")}}
+    {% endif %}
+    <a class="contact-link" href="{{page.extra.mail}}">Mail</a>
+    {% endif %}
+    {% if page.extra.github %}
+    {% if page.extra.icons %} 
+    {{ macros::svg_icon(page=page, path="icons/github.svg")}}
+    {% endif %}
+    <a class="contact-link" href="{{page.extra.github}}">Github</a>
+    {% endif %}
+    {% if page.extra.twitter %}
+    {% if page.extra.icons %} 
+    {{ macros::svg_icon(page=page, path="icons/twitter.svg")}}
+    {% endif %}
+    <a class="contact-link" href="{{page.extra.twitter}}">Twitter</a>
+    {% endif %}
+    {% if page.extra.mastodon %}
+    {% if page.extra.icons %} 
+    {{ macros::svg_icon(page=page, path="icons/mastodon.svg")}}
+    {% endif %}
+    <a class="contact-link" href="{{page.extra.mastodon}}">Mastodon</a>
+    {% endif %}
+  </ul>
+</section>
+{% endblock bottom_scripts %}
