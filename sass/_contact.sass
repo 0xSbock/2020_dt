@@ -26,29 +26,37 @@
       margin-left: 0
       margin-top: 2rem
 
+.contact-portrait
+  display: flex
+  justify-content: center
+  width: 100%
+
+  img
+    max-width: 30rem
+    clip-path: circle()
+
+
 .contact-list
   color: $dark-blue
   display: flex
-  margin-left: 2rem
 
   flex-direction: row
-  justify-content: start
+  justify-content: space-evenly
 
 
 .contact-link
-  float: left
-  display: inline-block
-  width: 50%
-  margin-left: 1rem
   font-size: 19pt
   font-family: 'Source Code Pro', monospace
+  display: flex
+
+  @media(max-width: $contact-single)
+    span
+      display: none
 
 .svg-icon
   fill: $fg
-  display: inline-block
-  max-width: 1.5rem
-  float: left
-  clear: both
+  width: 30px
+  margin-right: 0.25em
 
-.footer
+.contact-footer
   margin-bottom: 4rem
